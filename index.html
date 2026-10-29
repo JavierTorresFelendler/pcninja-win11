@@ -184,6 +184,10 @@
     }
     .footer-cta { text-align: center; padding: 24px 0 36px; }
 
+    .site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; padding: 22px 24px 28px; border-top: 1px solid var(--line); font-family: "Lato", Arial, sans-serif; font-size: 15px; }
+    .site-footer a { color: #b9c7cd; text-decoration: none; }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+
     @media (max-width: 900px) {
       .recipe { grid-template-columns: 1fr; padding: 24px; }
       .recipe img { max-width: 362px; margin: 0 auto; }
@@ -361,5 +365,11 @@
       </div>
     </div>
   </main>
+  <footer class="site-footer">
+    <a href="https://www.pcninja.pro/">PcNinja home</a>
+    <a href="https://help.pcninja.pro/">Remote support</a>
+    <a href="https://office.pcninja.pro/">Office installer</a>
+    <a href="https://github.com/JavierTorresFelendler">My tools on GitHub</a>
+  </footer>
 </body>
 </html>
