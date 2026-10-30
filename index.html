@@ -1,375 +1,123 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>latest ISO</title>
-  <meta name="description" content="PcNinja Windows 11 / Windows 10 Pro ISO downloads - clean, optimized installations for legacy and modern PC hardware.">
-  <meta property="og:title" content="latest ISO - PcNinja">
+  <title>Windows ISOs - PcNinja</title>
+  <meta name="description" content="Clean Windows 11 Pro ISOs from PcNinja. Each ISO has three install options: Full, Basic apps or Vanilla.">
+  <link rel="canonical" href="https://win11.pcninja.pro/">
+  <link rel="alternate" hreflang="en" href="https://win11.pcninja.pro/">
+  <link rel="alternate" hreflang="es" href="https://win11.pcninja.pro/es/">
+  <link rel="alternate" hreflang="he" href="https://win11.pcninja.pro/he/">
+  <link rel="alternate" hreflang="x-default" href="https://win11.pcninja.pro/">
+  <meta property="og:title" content="Windows ISOs - PcNinja">
+  <meta property="og:description" content="Clean Windows 11 Pro ISOs from PcNinja. Each ISO has three install options: Full, Basic apps or Vanilla.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://win11.pcninja.pro/">
-  <meta property="og:image" content="https://win11.pcninja.pro/assets/ninja.jpg">
+  <meta property="og:image" content="https://www.pcninja.pro/assets/logo-512.png">
+  <meta name="theme-color" content="#012456">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:ital,wght@1,400;1,800&family=Nunito:ital,wght@1,800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #153542;
-      --text: #e8ebec;
-      --line: rgba(255, 255, 255, 0.15);
-      --brand: #163544;
-      --header-h: 56px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Merriweather", Georgia, serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-
-    /* Header */
-    .topbar {
-      position: fixed;
-      inset: 0 0 auto 0;
-      height: var(--header-h);
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      padding: 0 28px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: var(--brand);
-      font-weight: 900;
-      font-size: 20px;
-    }
-    .brand img { width: 32px; height: 40px; display: block; }
-
-    /* Windows 11 banner */
-    .banner {
-      height: 254px;
-      background: #fff url("/assets/banner.png") center / cover no-repeat;
-    }
-
-    .wrap { max-width: 1216px; margin: 0 auto; padding: 0 24px; }
-    .rule { border: 0; border-top: 1px solid var(--line); margin: 16px 0; }
-
-    /* Recipe */
-    .recipe {
-      display: grid;
-      grid-template-columns: 362px 1fr;
-      gap: 40px;
-      padding: 24px 24px 40px 57px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .recipe img { width: 100%; height: auto; display: block; }
-    .recipe h1 {
-      font-family: "Lato", Arial, sans-serif;
-      font-size: 34.67px;
-      font-weight: 700;
-      text-decoration: underline;
-      margin: 18px 0 30px;
-    }
-    .big {
-      font-family: "Montserrat", Arial, sans-serif;
-      font-style: italic;
-      font-size: 24px;
-      line-height: 1.38;
-    }
-    .big p + p { margin-top: 1.38em; }
-    .big b { font-weight: 800; }
-
-    .notes { padding: 36px 48px 28px; }
-    .notes ul {
-      margin-top: 24px;
-      padding-left: 24px;
-      list-style: square;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-style: italic;
-      font-size: 17.33px;
-      line-height: 2;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 4px 16px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      color: #fff;
-      text-decoration: none;
-      font-family: "Merriweather", Georgia, serif;
-      font-size: 16px;
-      transition: background .15s;
-    }
-    .btn:hover { background: rgba(255, 255, 255, 0.1); }
-    .btn-wide { display: flex; width: 100%; margin-top: 20px; }
-
-    /* Download rows */
-    .iso {
-      display: grid;
-      grid-template-columns: 1fr 168px;
-      gap: 32px;
-      align-items: start;
-      padding: 22px 0 16px;
-      border-bottom: 1px solid var(--line);
-    }
-    .iso-main { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
-    .iso:last-of-type .iso-main, .iso.no-rule .iso-main { border-bottom: 0; }
-    .iso-head {
-      display: grid;
-      grid-template-columns: minmax(200px, 1.25fr) minmax(170px, 1fr) minmax(170px, auto);
-      gap: 8px 24px;
-      align-items: baseline;
-      font-style: italic;
-      font-size: 24px;
-      line-height: 1.38;
-    }
-    .iso-name { font-family: "Lato", Arial, sans-serif; }
-    .iso-ver { font-family: "Lato", Arial, sans-serif; white-space: nowrap; }
-    .iso-ver em { margin-left: 18px; font-family: "Merriweather", Georgia, serif; }
-    .iso-size { font-weight: 700; white-space: nowrap; }
-    .iso .btn { margin-top: 4px; }
-
-    details summary { list-style: none; cursor: pointer; position: relative; padding-right: 36px; }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::after {
-      content: "";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      width: 9px;
-      height: 9px;
-      border-right: 1.5px solid rgba(255, 255, 255, 0.45);
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.45);
-      transform: translateY(-50%) rotate(45deg);
-      transition: transform .15s;
-    }
-    details[open] summary::after { transform: translateY(-20%) rotate(-135deg); }
-    details ol {
-      margin: 14px 0 0 0;
-      padding: 14px 0 0 0;
-      border-top: 1px solid var(--line);
-      list-style: none;
-      counter-reset: n;
-      font-style: italic;
-      font-size: 24px;
-      line-height: 1.75;
-    }
-    details li { counter-increment: n; }
-    details li::before { content: counter(n) ". "; }
-
-    .section-title {
-      text-align: center;
-      font-family: "Nunito", Arial, sans-serif;
-      font-weight: 800;
-      font-style: italic;
-      font-size: 34.67px;
-      text-decoration: underline;
-      padding: 30px 0 34px;
-      border-bottom: 1px solid var(--line);
-    }
-    .footer-cta { text-align: center; padding: 24px 0 36px; }
-
-    .site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; padding: 22px 24px 28px; border-top: 1px solid var(--line); font-family: "Lato", Arial, sans-serif; font-size: 15px; }
-    .site-footer a { color: #b9c7cd; text-decoration: none; }
-    .site-footer a:hover { color: #fff; text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .recipe { grid-template-columns: 1fr; padding: 24px; }
-      .recipe img { max-width: 362px; margin: 0 auto; }
-      .notes { padding: 28px 24px; }
-      .iso { grid-template-columns: 1fr; gap: 12px; }
-      .iso-head { grid-template-columns: 1fr; font-size: 20px; gap: 2px; }
-      .big, details ol { font-size: 19px; }
-      .banner { height: 180px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script>(function(){var P={en:'/',es:'/es/',he:'/he/'},K='pcninja-lang',s=null,q=/[?&]lang=(en|es|he)\b/.exec(location.search);
+try{if(q){localStorage.setItem(K,q[1]);}s=localStorage.getItem(K);}catch(e){}
+if(q){history.replaceState(null,'',location.pathname+location.hash);return;}
+if(location.pathname!=='/')return;
+if(!s){var L=navigator.languages||[navigator.language||''];for(var i=0;i<L.length;i++){var c=String(L[i]).slice(0,2).toLowerCase();if(c==='iw')c='he';if(P[c]){s=c;break;}}}
+if(s&&s!=='en'&&P[s])location.replace(P[s]+location.hash);})();</script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/">
-      <img src="/assets/logo.png" alt="" width="32" height="40">
-      <span>latest ISO</span>
-    </a>
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="" width="40" height="40"><span>Win11 Pc Ninja</span></a>
+      <div class="menus">
+        <ul class="nav">
+          <li><a href="https://www.pcninja.pro/">PcNinja</a></li>
+          <li><a href="https://help.pcninja.pro/en/">Remote support</a></li>
+          <li><a href="https://office.pcninja.pro/">Office installer</a></li>
+        </ul>
+        <ul class="langs" aria-label="Language"><li><a href="/?lang=en" hreflang="en" lang="en" aria-current="true">EN</a></li><li><a href="/es/?lang=es" hreflang="es" lang="es">ES</a></li><li><a href="/he/?lang=he" hreflang="he" lang="he">עב</a></li></ul>
+      </div>
+    </div>
   </header>
 
-  <main style="padding-top: var(--header-h);">
-    <div class="banner" role="img" aria-label="Windows 11"></div>
+  <main>
+    <div class="latest">
+      <div class="wrap">
+        <span class="tag">Latest</span>
+        <h1>Windows 11 Pro 26H2</h1>
+        <ul class="meta">
+          <li>English</li>
+          <li>All-in-one · needs internet</li>
+          <li>Size <b class="num" dir="ltr">8.5 GB</b></li>
+          <li>Offline update: March 2026</li>
+        </ul>
+        <a class="btn btn-primary" href="https://aio11.pcninja.pro">Download ISO</a>
+      </div>
+    </div>
 
-    <section class="recipe">
-      <img src="/assets/ninja.jpg" alt="Ninja working on a laptop" width="575" height="1024">
-      <div>
-        <h1>what's MY recipe ?</h1>
-        <div class="big">
-          <p><b>P</b>cNinja ISO's provide a clean and optimized installation experience across both legacy and modern PC hardware, without unnecessary limitations.</p>
-          <p><b>I</b> start with a standard Microsoft image<br>and export only the Professional edition for use<b>.</b></p>
-          <p><b>F</b>irst option on my Windows 11 Pro ISO file is a fully working version that includes all of the below software<b>.</b></p>
-          <p><b>T</b>he second configuration adds the essentials:<br>
-            <a href="https://learn.microsoft.com/en-us/office/ltsc/2024/overview">Office 2024 LTSC</a> and <a href="https://www.7-zip.org/">7-Zip</a> latest version.<br>
-            this is in script mode, offline image uses the <u>march 2026</u> update,&nbsp; regular updates will take place naturally<b>.</b></p>
-          <p><b>T</b>he third option in the configuration includes a clean Professional image only<b>.</b></p>
+    <section>
+      <div class="wrap">
+        <h2 class="h2">Every ISO has the same three install options</h2>
+        <ol class="opts">
+          <li class="opt"><span class="k">option 1</span><h3>Full</h3><p>Fully working system with Office, Chrome and 7-Zip.</p></li>
+          <li class="opt"><span class="k">option 2</span><h3>Basic apps</h3><p>Windows Pro with the essential programs.</p></li>
+          <li class="opt"><span class="k">option 3</span><h3>Vanilla</h3><p>Microsoft's Windows Pro image only, nothing added.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="note">
+          <h2>Before you install</h2>
+          <ul>
+            <li>The ISO language is always English. A guide for adding system languages is coming.</li>
+            <li>Don't use Rufus options to bypass hardware checks.</li>
+            <li>Setup logs in automatically as the local Administrator. To skip that, delete <code>autounattend.xml</code> from the ISO root.</li>
+            <li>All-in-one installs need internet (Office and Chrome download during setup). Preinstalled images work offline.</li>
+            <li>Only need Office? Use the <a href="https://office.pcninja.pro/">Office Smart Installer</a>.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <hr class="rule">
-
-    <section class="notes big">
-      <p>Do not use Rufus options for bypassing old hardware restrictions!!</p>
-      <p>Microsoft has recently eased enforcement around TPM and CPU requirements, making Windows 11 far more accessible than at launch.</p>
-      <p>By using the unattended answer file method from Microsoft, you will be logged in automatically to the local Administrator account after installation.</p>
-      <p>Note: If you want to bypass the automatic login mechanism, open or extract the ISO file and delete the autounattend.xml file located in the root directory.</p>
-      <ul>
-        <li>all in one installations needs internet connection to download office and chrome apps.</li>
-        <li>Preinstalled ISO's can be uses without an internet connection.</li>
-        <li>if you need an office installations you can use my <a href="https://office.pcninja.pro/">Office Smart Installer</a>.</li>
-      </ul>
-      <a class="btn btn-wide" href="https://help.pcninja.pro/">Remote Assistance</a>
+    <section>
+      <div class="wrap">
+        <h2 class="h2">Earlier versions</h2>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>Version</th><th>Type</th><th class="size">Size</th><th><span hidden>Download</span></th></tr></thead>
+            <tbody>
+              <tr><td class="ver">Windows 11 Pro 25H2 v2</td><td class="type">Preinstalled · works offline</td><td class="size num">10 GB</td><td class="dl"><a class="btn btn-line" href="https://3in11.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 11 Pro 25H2 v2</td><td class="type">All-in-one · needs internet</td><td class="size num">7.4 GB</td><td class="dl"><a class="btn btn-line" href="https://aio25h2v2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 11 Pro 24H2</td><td class="type">All-in-one · needs internet</td><td class="size num">5 GB</td><td class="dl"><a class="btn btn-line" href="https://ninja11pro24h2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 11 Pro 24H2</td><td class="type">Preinstalled · works offline</td><td class="size num">7.5 GB</td><td class="dl"><a class="btn btn-line" href="https://3in11pro24h2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 11 Pro 23H2</td><td class="type">All-in-one · needs internet</td><td class="size num">5.8 GB</td><td class="dl"><a class="btn btn-line" href="https://ninja11pro23h2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 10 Pro 22H2</td><td class="type">2 install options</td><td class="size num">5 GB</td><td class="dl"><a class="btn btn-line" href="https://ninja10pro22h2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 10 Pro 21H2</td><td class="type">Preinstalled · works offline</td><td class="size num">8.4 GB</td><td class="dl"><a class="btn btn-line" href="https://ninja10pro21h2.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 10 Pro 21H1</td><td class="type">Preinstalled · works offline</td><td class="size num">7.8 GB</td><td class="dl"><a class="btn btn-line" href="https://ninja10pro21h1.pcninja.pro">Download</a></td></tr>
+              <tr><td class="ver">Windows 10 Ninjutsu v1.0</td><td class="type">Preinstalled · works offline</td><td class="size num">17.8 GB</td><td class="dl"><a class="btn btn-line" href="https://ninjutsu.pcninja.pro">Download</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
-
-    <hr class="rule" style="margin-bottom:0">
-
-    <div class="wrap">
-      <!-- Latest -->
-      <div class="iso">
-        <details class="iso-main">
-          <summary class="iso-head">
-            <span class="iso-name" style="font-family:'Merriweather',Georgia,serif">Latest All In One 3 Options installer</span>
-            <span class="iso-ver">Windows 11Pro 26h2</span>
-            <span class="iso-size">File Size: 8.5GB</span>
-          </summary>
-          <ol>
-            <li>Fully Working OS.</li>
-            <li>Added programs: Office 2024LTSC, latest Chrome &amp; 7z</li>
-            <li>Clean install of Microsoft's latest Image Windows 11 Professional</li>
-          </ol>
-        </details>
-        <a class="btn" href="https://aio11.pcninja.pro">Download</a>
-      </div>
-    </div>
-
-    <h2 class="section-title">Earlier Versions</h2>
-
-    <div class="wrap">
-      <div class="iso">
-        <details class="iso-main">
-          <summary class="iso-head">
-            <span class="iso-name">Preinstalled 3 Image Options</span>
-            <span class="iso-ver">Windows 11Pro 25h2<em>v2</em></span>
-            <span class="iso-size">File Size: 10GB</span>
-          </summary>
-          <ol>
-            <li>preinstalled and fully Working OS.</li>
-            <li>Preinstalled programs, Office 2024LTSC - Chrome &amp; 7z (mar2026).</li>
-            <li>Clean install of Microsoft's latest Image Windows 11 Professional.</li>
-          </ol>
-        </details>
-        <a class="btn" href="https://3in11.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso">
-        <details class="iso-main">
-          <summary class="iso-head">
-            <span class="iso-name">All In One 3 Options installer</span>
-            <span class="iso-ver">Windows 11Pro 25h2<em>v2</em></span>
-            <span class="iso-size">File Size: 7.4GB</span>
-          </summary>
-          <ol>
-            <li>Fully Working OS.</li>
-            <li>Added programs: Office 2024LTSC, latest Chrome &amp; 7z</li>
-            <li>Clean install of Microsoft's latest Image Windows 11 Professional</li>
-          </ol>
-        </details>
-        <a class="btn" href="https://aio25h2v2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">All In One 3 Options installer</span>
-          <span class="iso-ver">Windows 11 Pro 24h2</span>
-          <span class="iso-size">File Size: 5G</span>
-        </div>
-        <a class="btn" href="https://ninja11pro24h2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">Preinstalled 3 Image Options</span>
-          <span class="iso-ver">Windows 11 Pro 24h2</span>
-          <span class="iso-size">File Size: 7.5GB</span>
-        </div>
-        <a class="btn" href="https://3in11pro24h2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">All In One 3 Options installer</span>
-          <span class="iso-ver">Windows 11 Pro 23h2</span>
-          <span class="iso-size">File Size: 5.8G</span>
-        </div>
-        <a class="btn" href="https://ninja11pro23h2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">2 Options installer</span>
-          <span class="iso-ver">Windows 10 Pro 22h2</span>
-          <span class="iso-size">File Size: 5G</span>
-        </div>
-        <a class="btn" href="https://ninja10pro22h2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">Preinstalled</span>
-          <span class="iso-ver">Windows 10 Pro 21h2</span>
-          <span class="iso-size">File Size: 8.4G</span>
-        </div>
-        <a class="btn" href="https://ninja10pro21h2.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">Preinstalled</span>
-          <span class="iso-ver">Windows 10 Pro 21h1</span>
-          <span class="iso-size">File Size: 7.8G</span>
-        </div>
-        <a class="btn" href="https://ninja10pro21h1.pcninja.pro">Download</a>
-      </div>
-
-      <div class="iso no-rule">
-        <div class="iso-main iso-head">
-          <span class="iso-name">Preinstalled</span>
-          <span class="iso-ver">Windows 10 Ninjutsu<em>v1.0</em></span>
-          <span class="iso-size">File Size: 17.8G</span>
-        </div>
-        <a class="btn" href="https://ninjutsu.pcninja.pro">Download</a>
-      </div>
-
-      <div class="footer-cta">
-        <a class="btn" href="https://office.pcninja.pro">Download Office Smart Installer</a>
-      </div>
-    </div>
   </main>
+
   <footer class="site-footer">
-    <a href="https://www.pcninja.pro/">PcNinja home</a>
-    <a href="https://help.pcninja.pro/">Remote support</a>
-    <a href="https://office.pcninja.pro/">Office installer</a>
-    <a href="https://github.com/JavierTorresFelendler">My tools on GitHub</a>
+    <div class="wrap">
+      <span>Win11 Pc Ninja</span>
+      <ul>
+        <li><a href="https://www.pcninja.pro/">PcNinja home</a></li>
+        <li><a href="https://help.pcninja.pro/en/">Remote support</a></li>
+        <li><a href="https://office.pcninja.pro/">Office installer</a></li>
+        <li><a href="https://github.com/JavierTorresFelendler">GitHub</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
