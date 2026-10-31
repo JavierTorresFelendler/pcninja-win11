@@ -31,12 +31,13 @@ T = {
   nav_home="PcNinja", nav_help="Remote support", nav_office="Office installer",
   latest="Latest", lang_line="English", size="Size", update="Offline update: March 2026", dl_iso="Download ISO",
   aio="All-in-one · needs internet", pre="Preinstalled · works offline", two="2 install options",
-  opts_h="Every ISO has the same three install options", option="option",
+  opts_h="Every ISO has the same three install options", option="option", pro="Pro edition only",
+  intro="Every build starts from Microsoft's official image, and I keep only the Professional edition. Home, Education and the other editions are not included.",
   o1="Full", o1_t="Fully working system with Office, Chrome and 7-Zip.",
   o2="Basic apps", o2_t="Windows Pro with the essential programs.",
   o3="Vanilla", o3_t="Microsoft's Windows Pro image only, nothing added.",
   notes_h="Before you install",
-  n1="The ISO language is always English. A guide for adding system languages is coming.",
+  n1="The ISO language is always English (en-US). You can add your own display language after setup in Settings &gt; Time &amp; language. A step-by-step guide is coming.",
   n2="Don't use Rufus options to bypass hardware checks.",
   n3="Setup logs in automatically as the local Administrator. To skip that, delete <code>autounattend.xml</code> from the ISO root.",
   n4="All-in-one installs need internet (Office and Chrome download during setup). Preinstalled images work offline.",
@@ -49,12 +50,13 @@ T = {
   nav_home="PcNinja", nav_help="Soporte remoto", nav_office="Instalador de Office",
   latest="Última versión", lang_line="Inglés", size="Tamaño", update="Actualización offline: marzo de 2026", dl_iso="Descargar ISO",
   aio="All-in-one · requiere internet", pre="Preinstalado · funciona sin internet", two="2 opciones de instalación",
-  opts_h="Cada ISO tiene las mismas tres opciones de instalación", option="opción",
+  opts_h="Cada ISO tiene las mismas tres opciones de instalación", option="opción", pro="Solo edición Pro",
+  intro="Cada build parte de la imagen oficial de Microsoft y conservo solo la edición Professional. Home, Education y las demás ediciones no están incluidas.",
   o1="Completa", o1_t="Sistema totalmente funcional con Office, Chrome y 7-Zip.",
   o2="Programas básicos", o2_t="Windows Pro con los programas esenciales.",
   o3="Vanilla", o3_t="Solo la imagen de Windows Pro de Microsoft, sin nada añadido.",
   notes_h="Antes de instalar",
-  n1="El idioma de la ISO es siempre inglés. Pronto habrá una guía para añadir idiomas al sistema.",
+  n1="El idioma de la ISO es siempre inglés (en-US). Puedes añadir tu idioma después de instalar, en Configuración &gt; Hora e idioma. Pronto habrá una guía paso a paso.",
   n2="No uses las opciones de Rufus para saltarte la comprobación de hardware.",
   n3="La instalación inicia sesión automáticamente como Administrador local. Para evitarlo, borra <code>autounattend.xml</code> de la raíz de la ISO.",
   n4="Las instalaciones All-in-one necesitan internet (Office y Chrome se descargan durante la instalación). Las imágenes preinstaladas funcionan sin conexión.",
@@ -67,12 +69,13 @@ T = {
   nav_home="PcNinja", nav_help="תמיכה מרחוק", nav_office="מתקין Office",
   latest="הגרסה האחרונה", lang_line="אנגלית", size="גודל", update="עדכון אופליין: מרץ 2026", dl_iso="הורדת ISO",
   aio="All-in-one · דורש אינטרנט", pre="מותקן מראש · עובד בלי אינטרנט", two="2 אפשרויות התקנה",
-  opts_h="בכל ISO יש אותן שלוש אפשרויות התקנה", option="אפשרות",
+  opts_h="בכל ISO יש אותן שלוש אפשרויות התקנה", option="אפשרות", pro="מהדורת Pro בלבד",
+  intro="כל Build שלי מתחיל מה-Image הרשמי של Microsoft, ואני משאיר בו רק את מהדורת Professional. מהדורות Home, Education ושאר המהדורות לא כלולות.",
   o1="מלאה", o1_t="מערכת עובדת לגמרי עם Office, 7-Zip ו-Chrome.",
   o2="תוכנות בסיסיות", o2_t="Windows Pro עם התוכנות החיוניות.",
   o3="Vanilla", o3_t="רק ה-Image של Windows Pro מ-Microsoft, בלי שום תוספת.",
   notes_h="לפני ההתקנה",
-  n1="שפת ה-ISO היא תמיד אנגלית. מדריך להוספת שפות מערכת בדרך.",
+  n1="שפת ה-ISO היא תמיד אנגלית (en-US). אפשר להוסיף את השפה שלכם אחרי ההתקנה, בהגדרות &gt; שעה ושפה. מדריך מפורט בדרך.",
   n2="אל תשתמשו באפשרויות של Rufus לעקיפת בדיקות החומרה.",
   n3="ההתקנה נכנסת אוטומטית למשתמש Administrator המקומי. כדי לבטל את זה, מחקו את <code>autounattend.xml</code> מתיקיית השורש של ה-ISO.",
   n4="התקנות All-in-one צריכות אינטרנט (Office ו-Chrome יורדים במהלך ההתקנה). תמונות שמותקנות מראש עובדות בלי אינטרנט.",
@@ -142,6 +145,7 @@ PAGE = """<!doctype html>
         <h1>{l_ver}</h1>
         <ul class="meta">
           <li>{lang_line}</li>
+          <li>{pro}</li>
           <li>{l_type}</li>
           <li>{size} <b class="num" dir="ltr">{l_size}</b></li>
           <li>{update}</li>
@@ -153,6 +157,7 @@ PAGE = """<!doctype html>
     <section>
       <div class="wrap">
         <h2 class="h2">{opts_h}</h2>
+        <p class="intro">{intro}</p>
         <ol class="opts">
           <li class="opt"><span class="k">{option} 1</span><h3>{o1}</h3><p>{o1_t}</p></li>
           <li class="opt"><span class="k">{option} 2</span><h3>{o2}</h3><p>{o2_t}</p></li>

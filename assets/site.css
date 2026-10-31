@@ -55,6 +55,7 @@ h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
 section { padding-block: 48px; }
 section + section { padding-top: 0; }
 .h2 { font-size: 28px; margin-bottom: 18px; }
+.intro { color: var(--muted); max-width: 44em; margin-top: -8px; margin-bottom: 20px; }
 
 /* Install options */
 .opts { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
